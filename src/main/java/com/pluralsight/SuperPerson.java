@@ -11,7 +11,7 @@ public class SuperPerson {
     protected int health;
     protected int experiencePoints;
 
-    protected HashMap<String, Integer> powerUps= new HashMap<>();
+    protected HashMap<String, Integer> powerUps = new HashMap<>();
 
     // Tracks how many times the characters has hit each opponent
     private final Map<String, Integer> battleLog = new HashMap<>();
@@ -26,13 +26,13 @@ public class SuperPerson {
     }
 
     //method to return if our SuperPerson is alive
-    public boolean isAlive(){
+    public boolean isAlive() {
 
         //if they have health they are alive, return true, otherwise false
         return this.health > 0;
     }
 
-    public int fight(SuperPerson opponent){
+    public int fight(SuperPerson opponent) {
         //print out who we are fighting.
 
         int damageAmount = new Random().nextInt(21);
@@ -42,17 +42,17 @@ public class SuperPerson {
 
     }
 
-    public void takeDamage(int damageAmount){
+    public void takeDamage(int damageAmount) {
         //subtract the damage amount from the health
         // ,but we don't want ever set our health below 0
         this.health -= damageAmount;
-        if(this.health < 0){
+        if (this.health < 0) {
             this.health = 0;
         }
     }
 
     // a way to ask the super person how they are doing.
-    public String getStatus(){
+    public String getStatus() {
 
         // build and return a string that tells us how they are doing
         return this.name + " has " + this.health + " health left! ";
@@ -74,12 +74,12 @@ public class SuperPerson {
     }
 
     // add power up method
-    public void addPowerUp(String item, int value){
-        powerUps.put(item,value);
+    public void addPowerUp(String item, int value) {
+        powerUps.put(item, value);
     }
 
     // add get power bonus method
-    public int getPowerBonus(String item){
-        return powerUps.getOrDefault(item,0);
+    public int getPowerBonus(String item) {
+        return powerUps.getOrDefault(item, 0);
     }
 }

@@ -25,14 +25,14 @@ public class SuperApp {
 
 
         // Show the starting status of both characters
-        System.out.println("\n 🦇"+ hero.getStatus());
+        System.out.println("\n 🦇" + hero.getStatus());
         Thread.sleep(1000);
 
-        System.out.println("\n 🤡"+villain.getStatus());
+        System.out.println("\n 🤡" + villain.getStatus());
         Thread.sleep(1000);
 
         // Loop while both the hero and villain are still alive
-        while (hero.isAlive() && villain.isAlive()){
+        while (hero.isAlive() && villain.isAlive()) {
 
             // Indicate the hero's turn
             System.out.println("\n🦇Bat Man's's Turn:");
@@ -42,11 +42,11 @@ public class SuperApp {
             hero.fight(villain);
 
             // Show the villain's updated status
-            System.out.println("\n 🤡"+villain.getStatus());
+            System.out.println("\n 🤡" + villain.getStatus());
             Thread.sleep(1000);
 
             // If the villain is no longer alive, break the loop
-            if(!villain.isAlive()){
+            if (!villain.isAlive()) {
                 break;
             }
             // Indicate the villain's turn
@@ -57,7 +57,7 @@ public class SuperApp {
             villain.fight(hero);
 
             // Show the hero's updated status
-            System.out.println("\n 🦇"+ hero.getStatus());
+            System.out.println("\n 🦇" + hero.getStatus());
             Thread.sleep(1000);
         }
 

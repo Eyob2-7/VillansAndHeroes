@@ -8,9 +8,8 @@ public class SuperVillain extends SuperPerson{
 
     public SuperVillain(String name, int health,int evilLevel) throws InterruptedException {
         super(name, health);
-
-
         this.experiencePoints = evilLevel;
+
         // let the world know the hero now exists
         Thread.sleep(1000);
         System.out.println("🤡"+this.name + " has arrived with a power level of " + evilLevel +"XP");
@@ -25,6 +24,7 @@ public class SuperVillain extends SuperPerson{
         int damage = baseDamage + evilBoost;
 
         if (this.health < 60 && !powerUps.isEmpty()) {
+
             //create a new list of just the keys from the HashMap (glove, hammer, etc....)
             List<String> items = new ArrayList<String>(powerUps.keySet());
 
@@ -37,8 +37,6 @@ public class SuperVillain extends SuperPerson{
             System.out.println("🤡 " + this.name + " uses evil " + randomItem + " for +" + bonus + " damage!");
             damage += bonus;
         }
-
-
 
         if (baseDamage == 0){
             System.out.println(this.name + " missed");
